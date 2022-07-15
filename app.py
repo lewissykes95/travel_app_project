@@ -1,13 +1,12 @@
-from distutils.log import debug
 from flask import Flask, render_template 
 
-from controllers.destination_controller import destination_blueprint
-from controllers.traveller_controller import traveller_blueprint
+from controllers.destination_controller import destinations_blueprint
+from controllers.traveller_controller import travellers_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(destination_blueprint)
-app.register_bluprint(traveller_blueprint)
+app.register_blueprint(destinations_blueprint)
+app.register_blueprint(travellers_blueprint)
 
 @app.route('/')
 def home():

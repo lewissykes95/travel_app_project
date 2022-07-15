@@ -1,0 +1,27 @@
+
+#bucket-list-title {
+    text-align: left;
+}
+
+img {
+    width: 1000px;
+    height: 700px;
+    image-rendering: crisp-edges;
+    z-index: 1;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.image-sec {
+    z-index: -1;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }

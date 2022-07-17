@@ -7,12 +7,13 @@ body {
 h1 {
     text-align: center;
 }
-
 .nav-bar-container {
+    z-index: 1;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(175, 252, 226);
+    background-image: linear-gradient(white, rgb(175, 252, 226));
     box-shadow: 0px 2px 10px rgb(2, 97, 92);
+    z-index: 1100;
 }
 
 nav ul {
@@ -36,6 +37,12 @@ a:hover {
     color: white;
     text-shadow: 0px 2px 10px rgb(2, 97, 92);;
 }
+
+
+
+
+
+
 
 
 

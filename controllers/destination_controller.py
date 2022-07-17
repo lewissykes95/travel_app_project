@@ -6,6 +6,12 @@ import repositories.destination_repository as destination_repository
 
 destinations_blueprint = Blueprint("destinations", __name__)
 
+
 @destinations_blueprint.route("/destinations")
 def travellers():
     return render_template("destinations/index.html")
+
+@destinations_blueprint.route("/destinations/new")
+def new():
+    return render_template("destinations/new.html")
+

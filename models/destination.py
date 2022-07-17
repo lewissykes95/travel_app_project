@@ -4,3 +4,5 @@ class Destination:
         self.country = _country
         self.continent = _continent
         self.id = id
+
+    

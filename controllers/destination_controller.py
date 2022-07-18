@@ -8,6 +8,12 @@ import repositories.destination_repository as destination_repository
 destinations_blueprint = Blueprint("destinations", __name__)
 
 # INDEX 
+
+@destinations_blueprint.route("/Voyager")
+def home():
+    return render_template("/index.html")
+
+
 @destinations_blueprint.route("/destinations")
 def destinations():
     #GET the destinations from the DB
@@ -18,6 +24,7 @@ def destinations():
 
 # NEW
 # GET '/tasks/new'
+
 @destinations_blueprint.route("/destinations/new", methods=['GET'])
 def new_destination():
     travellers = traveller_repository.select_all()
@@ -42,26 +49,9 @@ def create_destination():
 # GET '/tasks/<id>'
 @destinations_blueprint.route("/destinations/<id>", methods=['GET'])
 def show_destination(id):
-    destination = destination_repository.select(id)
-    return render_template('destination/show.html', destination = destination) 
+    destinations = destination_repository.select(id)
+    return render_template('destination/bucket-list.html', destinations = destinations) 
 
-
-@destinations_blueprint.route("/destinations/amsterdam")
-def amsterdam():
-    return render_template("destinations/amsterdam.html")
-
-@destinations_blueprint.route("/destinations/rio")
-def rio():
-    return render_template("destinations/rio.html")
-
-@destinations_blueprint.route("/destinations/sydney")
-def sydney():
-    return render_template("destinations/sydney.html")
-
-@destinations_blueprint.route("/bucket-list", methods=['GET'])
-def list():
-    destinations = destination_repository.select_all()
-    return render_template("travellers/list.html", destination=destinations)
 
 
 

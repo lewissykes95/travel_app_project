@@ -8,16 +8,16 @@ travellers_blueprint = Blueprint("travellers", __name__)
 
 @travellers_blueprint.route("/login")
 def login():
-    return render_template("travellers/login.html")
+    return render_template("login.html")
 
 @travellers_blueprint.route("/about")
 def about():
-    return render_template("travellers/about.html")
+    return render_template("about.html")
 
-@travellers_blueprint.route("/bucket-list", methods=['GET'])
-def list():
-    travellers = traveller_repository.select_all()
-    return render_template("travellers/list.html", travellers=travellers)
+# @travellers_blueprint.route("/bucket-list", methods=['GET'])
+# def list():
+#     travellers = traveller_repository.select_all()
+#     return render_template("travellers/bucket-list.html", travellers=travellers)
 
 
 

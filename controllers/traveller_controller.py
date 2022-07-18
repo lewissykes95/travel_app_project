@@ -12,4 +12,8 @@ def login():
 
 @travellers_blueprint.route("/about")
 def about():
-    return render_template("travellers/index.html")
+    return render_template("travellers/about.html")
+
+@travellers_blueprint.route("/bucket-list")
+def list():
+    return render_template("travellers/list.html")

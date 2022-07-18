@@ -26,18 +26,24 @@ def new_destination():
 # CREATE
 # POST '/tasks'
 
-# @destinations_blueprint.route("/bucket-list", methods=['POST'])
-# def create_destination():
-#     traveller_id    = request.form['traveller_id']
-#     city            = request.form['city']
-#     country         = request.form['country']
-#     duration        = request.form['duration']
-#     checked_off     = request.form['done']
-#     traveller       = traveller_repository.(traveller_id)
-#     destination     = Destination (traveller, city, country, duration, checked_off)
-#     destination_repository.save(destination)
-#     return redirect('/bucket-list') 
+@destinations_blueprint.route("/bucket-list", methods=['POST'])
+def create_destination():
+    traveller_id    = request.form['traveller_id']
+    city            = request.form['city']
+    country         = request.form['country']
+    duration        = request.form['duration']
+    checked_off     = request.form['done']
+    traveller       = traveller_repository(traveller_id)
+    destination     = Destination (traveller, city, country, duration, checked_off)
+    destination_repository.save(destination)
+    return redirect('/bucket-list') 
 
+# SHOW
+# GET '/tasks/<id>'
+@tasks_blueprint.route("/destinations/<id>", methods=['GET'])
+def show_destination(id):
+    destination = destination_repository.select(id)
+    return render_template('destination/show.html', destination = destination)
 
 
 @destinations_blueprint.route("/destinations/amsterdam")

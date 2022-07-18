@@ -33,17 +33,17 @@ def create_destination():
     country         = request.form['country']
     duration        = request.form['duration']
     checked_off     = request.form['done']
-    traveller       = traveller_repository(traveller_id)
+    traveller       = traveller_repository.select(traveller_id)
     destination     = Destination (traveller, city, country, duration, checked_off)
     destination_repository.save(destination)
-    return redirect('/bucket-list') 
+    return redirect('/bucket-list')
 
 # SHOW
 # GET '/tasks/<id>'
-@tasks_blueprint.route("/destinations/<id>", methods=['GET'])
+@destinations_blueprint.route("/destinations/<id>", methods=['GET'])
 def show_destination(id):
     destination = destination_repository.select(id)
-    return render_template('destination/show.html', destination = destination)
+    return render_template('destination/show.html', destination = destination) 
 
 
 @destinations_blueprint.route("/destinations/amsterdam")

@@ -14,6 +14,10 @@ def login():
 def about():
     return render_template("travellers/about.html")
 
-@travellers_blueprint.route("/bucket-list")
+@travellers_blueprint.route("/bucket-list", methods=['GET'])
 def list():
-    return render_template("travellers/list.html")
+    travellers = traveller_repository.select_all()
+    return render_template("travellers/list.html", travellers=travellers)
+
+
+

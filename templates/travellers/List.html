@@ -2,7 +2,11 @@
 
 {% block content %}
 
-<h1>hello world</h1>
+{% for traveller in travellers  %}
+
+<h2>Hello {{ traveller.name }} where would you like to go next?</h2>
+    
+{% endfor %}
 
     
 {% endblock  %}

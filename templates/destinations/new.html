@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    
+    <div class="flex-container">
+        <div class="flex-item1">
+            <h1 id="bucket-list-title">Where to next?:</h1>
+            <form action="/bucket-list" method="post" class="flex-item">
+                <div>
+                    <label for="traveller">Traveller:</label>
+
+                    <select id="traveller" name="traveller_id" required autofocus>
+                      {% for traveller in all_travellers %}
+                        <option value="{{ traveller.id }}">{{ traveller.name }}</option>
+                      {% endfor %}
+                    </select>
+
+                </div>
+                <br>
+                <div>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                <br>
+                <div>
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country">
+                </div>
+                <br>
+                <div>
+                    <label for="">Duration in days:</label>
+                    <input type="number" id="duration" name="duration">
+                </div>
+                <br>
+                <div> 
+                <label for="">Checked Off:</label>
+                <select name="checked_off" id="done">
+                    <option value="true">Already been!</option>
+                    <option value="false">Need to go!</option>
+                </select>
+                </div>
+                <br>
+
+                <button type="submit" >Add to Bucket List!</button>
+
+            </form> 
+        </div>
+        <div class="flex-item2">
+            <img src="https://images.hdqwalls.com/wallpapers/milford-sound-new-zealand-5k-k6.jpg" alt="NZ" class="flex-item" id="milford">
+            <h2><a href="/" class="centered">Your Next Destination Awaits...</a></h2>
+        </div>
+
+    </div>
+    <br>
+    <br>
+
+</main>
+
+{% endblock %}

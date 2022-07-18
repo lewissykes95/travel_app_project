@@ -37,6 +37,22 @@ def delete_all():
     run_sql(sql)
 
 
+def update(traveller):
+    sql = "UPDATE travellers SET (name, age) = (%s, %s) WHERE id = %s"
+    values = [traveller.name, traveller.age, traveller.id]
+    run_sql(sql, values)
+
+def destinations(traveller):
+    destinations = []
+
+    sql = "SELECT * FROM destinations WHERE traveller_id = %s"
+    values = [traveller.id]
+    results = run_sql(sql, values)
+
+    for row in results: 
+        destination = Destination(row['traveller_id'], row['city'], row['country'], row['duration'], row['checked_off'], row['id'])
+        destinations.append(destination)
+    return destinations
 
 
 

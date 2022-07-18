@@ -9,12 +9,11 @@ import repositories.traveller_repository as traveller_repository
 destination_repository.delete_all()
 traveller_repository.delete_all()
 
-
-destination1 = Destination('Sydney', 'Australia', 'Australasia')
-destination_repository.save(destination1)
-
-
 traveller1 = Traveller('Joey', 30)
 traveller_repository.save(traveller1)
+
+destination1 = Destination(traveller1, 'Sydney', 'Australia', 30, False)
+destination_repository.save(destination1)
+
 
 

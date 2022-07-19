@@ -4,14 +4,16 @@
     <section class="destination-container">
     {% for destination in all_destinations %}
         <div class="destination-box">
-        <h3>Traveller Name: {{ destination.traveller.name }}</h3>
-        <h3>City: <a href="/destinations/{{destination.id}}">{{ destination.city}}</a></h3>
-        <h3>Country: {{ destination.country }}</h3>
-        <h3>Duration: {{ destination.duration }}</h3>
-        <h3>Checked Off: {{ destination.checked_off }}</h3>
+            <h3>Traveller Name: {{ destination.traveller.name }}</h3>
+            <h3>City: <a href="/destinations/{{destination.id}}">{{ destination.city}}</a></h3>
+            <h3>Country: {{ destination.country }}</h3>
+            <h3>Duration: {{ destination.duration }}</h3>
+            <h3>Checked Off: {{ destination.checked_off }}</h3>
         </div>  
     {% endfor %}
           
     </section>  
+    <br>
+    <br>
     
 {% endblock  %}

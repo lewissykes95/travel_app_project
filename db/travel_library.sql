@@ -17,10 +17,10 @@ CREATE TABLE destinations (
     traveller_id INT NOT NULL REFERENCES travellers(id)
 );
 
+CREATE TABLE visits (
+    id SERIAL PRIMARY KEY,
+    destination_id SERIAL NOT NULL REFERENCES destinations(id),
+    traveller_id SERIAL NOT NULL REFERENCES travellers(id)
+);
 
--- CREATE TABLE bucket_list (
---     id SERIAL PRIMARY KEY, 
---     traveller_id INT NOT NULL REFERENCES travellers(id) ON DELETE CASCADE, 
---     destination_id INT NOT NULL REFERENCES destinations(id) ON DELETE CASCADE,
---     review TEXT
--- );
+

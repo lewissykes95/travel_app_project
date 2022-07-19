@@ -13,7 +13,7 @@
     text-align: center;
     border: 2px solid rgb(2, 97, 92);
     border-radius: 10px;
-    box-shadow: 10px 10px 10px rgb(2, 97, 92);
+    box-shadow: 5px 5px 5px rgb(2, 97, 92);
     
 }
 
@@ -26,9 +26,25 @@
     text-align: center;
     border: 2px solid rgb(2, 97, 92);
     border-radius: 10px;
-    box-shadow: 10px 10px 10px rgb(2, 97, 92);
+    box-shadow: 5px 5px 5px rgb(2, 97, 92);
     
 }
+
+.destination-box-edit {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    position: relative;
+    left: 20%;
+    background-image: linear-gradient(white, rgb(2, 97, 92));
+    width: 400px;
+    height: 270px;
+    border: 2px solid rgb(2, 97, 92);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(2, 97, 92);
+    
+}
+
 
 
 

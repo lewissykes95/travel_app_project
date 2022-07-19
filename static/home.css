@@ -92,4 +92,12 @@ footer {
     text-shadow: 0px 10px 10px rgb(7, 153, 146, 0.596);
 }
 
+#suggestions {
+    position: relative;
+    top: 80px;
+    left: 80px;
+    color: rgb(2, 97, 92);
+    
+}
+
 

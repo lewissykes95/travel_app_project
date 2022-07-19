@@ -21,8 +21,6 @@
   
     <div>
       <label for="country">Country:</label>
-      <input type="text" id="country" name="country" value="{{destination.country}}" required>
-      <label for="country">Country:</label>
                     <select id="country" name="country" required>
                         <option>select country</option>
                         <option value="AF">Afghanistan</option>
@@ -296,7 +294,7 @@
           Already been!
         </option>
   
-        <option value="false"
+        <option value="false" selected
           {% if destination.checked_off == False %} selected="selected" {% endif %}>
           Need to go!
         </option>

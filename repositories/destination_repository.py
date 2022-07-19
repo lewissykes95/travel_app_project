@@ -53,3 +53,10 @@ def update(destination):
     values = [destination.traveller.id, destination.city, destination.country, destination.duration, destination.checked_off, destination.id]
     run_sql(sql, values)
 
+
+# def count(destination):
+#     sql = "SELECT COUNT(*)FROM destinations WHERE country = %s and checked_off = true"
+#     values = [destination.country]
+#     run_sql(sql, values)
+
+

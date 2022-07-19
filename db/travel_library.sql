@@ -16,10 +16,19 @@ CREATE TABLE destinations (
     traveller_id INT NOT NULL REFERENCES travellers(id)
 );
 
-CREATE TABLE visits (
+CREATE TABLE cities (
     id SERIAL PRIMARY KEY,
-    destination_id SERIAL NOT NULL REFERENCES destinations(id),
-    traveller_id SERIAL NOT NULL REFERENCES travellers(id)
+    name VARCHAR(255),
+    visits INTEGER
+    traveller_id SERIAL NOT NULL REFERENCES travellers(id),
 );
+
+CREATE TABLE countries (
+    id SERIAL PRIMARY KEY, 
+    name VARCHAR(255)
+)
+
+
+    
 
 

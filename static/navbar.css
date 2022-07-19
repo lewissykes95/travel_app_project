@@ -11,7 +11,6 @@ h1 {
     z-index: 1;
     display: flex;
     justify-content: space-around;
-    /* box-shadow: 0px 2px 10px rgb(2, 97, 92); */
 }
 
 nav ul {
@@ -33,7 +32,39 @@ a {
 
 a:hover {
     color: white;
-    text-shadow: 0px 2px 10px rgb(2, 97, 92);;
+    text-shadow: 0px 2px 10px rgb(2, 97, 92);
+}
+
+
+.submit-button {
+    padding: 8px;
+    font-family: 'Lobster Two', cursive;
+    font-size: 18px;
+    border: 2px solid rgb(2, 97, 92);
+    border-radius: 20px;
+    color: rgb(2, 97, 92);
+    background-color: white;
+    
+}
+
+
+.submit-button:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    
+}
+
+
+.option {
+    padding: 6px;
+    font-family: 'Lobster Two', cursive;
+    font-size: 16px;
+    border: 2px solid rgb(2, 97, 92);
+    border-radius: 20px;
+    color: rgb(2, 97, 92);
+    background-color: white;
+    
 }
 
 

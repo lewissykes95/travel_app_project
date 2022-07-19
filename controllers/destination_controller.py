@@ -94,6 +94,29 @@ def delete_destination(id):
 
 
 
+@destinations_blueprint.route("/destinations/amsterdam")
+def amsterdam():
+    return render_template("destinations/amsterdam.html")
+
+
+
+@destinations_blueprint.route("/destinations/sydney")
+def sydney():
+    return render_template("destinations/sydney.html")
+
+
+@destinations_blueprint.route("/destinations/rio")
+def rio():
+    return render_template("destinations/rio.html")
+
+
+
+
+
+
+
+
+
 
 
 

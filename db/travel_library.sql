@@ -7,7 +7,6 @@ CREATE TABLE travellers (
     age INTEGER
 );
 
-
 CREATE TABLE destinations (
     id SERIAL PRIMARY KEY, 
     city VARCHAR(255),

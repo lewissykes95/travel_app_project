@@ -17,11 +17,3 @@ def about():
 
 
 
-
-# @travellers_blueprint.route("/bucket-list", methods=['GET'])
-# def list():
-#     travellers = traveller_repository.select_all()
-#     return render_template("travellers/bucket-list.html", travellers=travellers)
-
-
-

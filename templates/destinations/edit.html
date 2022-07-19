@@ -5,7 +5,7 @@
 <form class="destination-box-edit" action="/destinations/{{destination.id}}" method="post">
     <div>
         <label for="traveller">Traveller:</label>
-        <select id="traveller" name="traveller_id">
+        <select id="traveller" name="traveller_id" class="option">
           {% for traveller in all_travellers %}
             <option value="{{ traveller.id }}"
               {% if destination.traveller.id== traveller.id %} selected="selected"{% endif %}>
@@ -16,12 +16,12 @@
       </div> 
     <div>
       <label for="city">City:</label>
-      <input type="text" id="city" name="city" value="{{destination.city}}" required autofocus>
+      <input type="text" id="city" name="city" value="{{destination.city}}" class="option" required autofocus>
     </div>
   
     <div>
       <label for="country">Country:</label>
-                    <select id="country" name="country" required>
+                    <select id="country" name="country" class="option" required>
                         <option>select country</option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Aland Islands</option>
@@ -280,16 +280,16 @@
 
       
     <div>
-        <label for="duration">Duration:</label>
-        <input type="number" id="duration" name="duration" value="{{destination.duration}}" required>
+        <label for="duration">Duration in days:</label>
+        <input type="number" id="duration" name="duration" value="{{destination.duration}}" class="option" required>
       </div>
     
   
     <div>
       <label for="done">Checked Off:</label>
-      <select id="done" name="done">
+      <select id="done" name="done" class="option">
   
-        <option value="true"
+        <option value="true" 
           {% if destination.checked_off == True %} selected="selected" {% endif %}>
           Already been!
         </option>
@@ -301,7 +301,7 @@
   
       </select>
     </div>
-    <button type="submit">Update Destination</button>
+    <button type="submit" class="submit-button">Update Destination</button>
 
 
   

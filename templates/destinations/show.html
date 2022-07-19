@@ -9,9 +9,9 @@
         <p>{{ destination.country }}</p>
         <p>{{ destination.duration }}</p>
         <p>{{ destination.checked_off }}</p>
-        <p><a href="/destinations/{{destination.id}}/edit">Edit</a></p>
+        <p><a href="/destinations/{{destination.id}}/edit " class="edit">Edit</a></p>
         <form class="delete-form" action="/destinations/{{destination.id}}/delete" method="POST">
-            <button><i>Delete</i></button>
+            <button class="submit-button"><i>Delete</i></button>
           </form> 
     </div>
     <br>

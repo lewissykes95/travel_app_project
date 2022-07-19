@@ -24,7 +24,7 @@
     left: 20%;
     background-image: linear-gradient(white, rgb(2, 97, 92));
     width: 200px;
-    height: 270px;
+    height: 290px;
     text-align: center;
     border: 2px solid rgb(2, 97, 92);
     border-radius: 10px;
@@ -49,11 +49,12 @@
     
 }
 
-
-
-
 .delete-form {
     position: relative;
     top: -10px;
+}
+
+.edit {
+    color: black;
 }
 

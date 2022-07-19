@@ -81,7 +81,7 @@ footer {
 
 
 footer {
-    background-color: rgb(7, 153, 146, 0.596);
+    background-image: linear-gradient(to right, rgb(7, 153, 146, 0.596) , white);
     
 }
 

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form action="/tasks/{{destination.id}}" method="post">
+<form action="/destinations/{{destination.id}}" method="post">
     <div>
         <label for="traveller">Traveller:</label>
         <select id="traveller" name="traveller_id">
@@ -32,22 +32,24 @@
     
   
     <div>
-      <label for="checked-off">Checked Off:</label>
-      <select id="checked_off" name="checked_off">
+      <label for="done">Checked Off:</label>
+      <select id="done" name="done">
   
         <option value="true"
           {% if destination.checked_off == True %} selected="selected" {% endif %}>
-          True
+          Already been!
         </option>
   
         <option value="false"
           {% if destination.checked_off == False %} selected="selected" {% endif %}>
-          False
+          Need to go!
         </option>
   
       </select>
     </div>
     <button type="submit">Update Destination</button>
+
+    
   
   </form>
     

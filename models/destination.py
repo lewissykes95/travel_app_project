@@ -10,3 +10,5 @@ class Destination:
 
     def mark_checked_off(self):
         self.checked_off = True
+
+    

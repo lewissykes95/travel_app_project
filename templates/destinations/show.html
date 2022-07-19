@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div>
+    <div class="destination-box-show">
         <p>{{ destination.traveller.name }}</p>
         <hr>
         <p>{{ destination.city }}</p>
@@ -10,8 +10,14 @@
         <p>{{ destination.duration }}</p>
         <p>{{ destination.checked_off }}</p>
         <p><a href="/destinations/{{destination.id}}/edit">Edit</a></p>
+        <form class="delete-form" action="/destinations/{{destination.id}}/delete" method="POST">
+            <button><i>Delete</i></button>
+          </form> 
     </div>
-        
+    <br>
+    <br>
+
+    
 
  
     

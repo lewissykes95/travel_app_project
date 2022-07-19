@@ -28,7 +28,7 @@ def home():
 
 # CREATE
 
-@destinations_blueprint.route("/destinations", methods=['POST'])
+@destinations_blueprint.route("/destinations/new", methods=['POST'])
 def create_destination():
     traveller_id    = request.form['traveller_id']
     city            = request.form['city']
@@ -38,9 +38,7 @@ def create_destination():
     traveller       = traveller_repository.select(traveller_id)
     destination     = Destination (traveller, city, country, duration, checked_off)
     destination_repository.save(destination)
-    return redirect('/destinations')
-
-
+    return redirect('/destinations/new')
 
 
 @destinations_blueprint.route("/bucket-list", methods=['GET'])
@@ -58,13 +56,15 @@ def show_destination(id):
     traveller= traveller_repository.select(id)
     return render_template('destinations/show.html', destination = destination, traveller = traveller) 
 
-
+#EDIT
 
 @destinations_blueprint.route("/destinations/<id>/edit", methods=['GET'])
 def edit_destination(id):
     destination = destination_repository.select(id)
     travellers = traveller_repository.select_all()
     return render_template('destinations/edit.html', destination = destination, all_travellers = travellers)
+
+#UPDATE
 
 @destinations_blueprint.route("/destinations/<id>", methods=["Post"])
 def update_destination(id):
@@ -74,32 +74,23 @@ def update_destination(id):
     duration        = request.form['duration']
     checked_off     = request.form['done']
     traveller       = traveller_repository.select(traveller_id)
-    destination     = Destination (traveller, city, country, duration, checked_off)
-    destination_repository.save(destination)
-    return redirect('/destinations')
+    destination     = destination_repository.select(id)
+    destination.traveller = traveller
+    destination.city = city
+    destination.country = country
+    destination.duration = duration
+    destination.checked_off = checked_off
+    destination_repository.update(destination)
+    return redirect('/bucket-list') 
 
 
+# DELETE
 
-# # UPDATE
-# # PUT '/tasks/<id>'
-# @tasks_blueprint.route("/tasks/<id>", methods=['POST'])
-# def update_task(id):
-#     description = request.form['description']
-#     user_id     = request.form['user_id']
-#     duration    = request.form['duration']
-#     completed   = request.form['completed']
-#     user        = user_repository.select(user_id)
-#     task        = Task(description, user, duration, completed, id)
-#     task_repository.update(task)
-#     return redirect('/tasks')
 
-# # DELETE
-# # DELETE '/tasks/<id>'
-# @tasks_blueprint.route("/tasks/<id>/delete", methods=['POST'])
-# def delete_task(id):
-#     task_repository.delete(id)
-#     return redirect('/tasks')
-
+@destinations_blueprint.route("/destinations/<id>/delete", methods=['POST'])
+def delete_destination(id):
+    destination_repository.delete(id)
+    return redirect('/bucket-list')
 
 
 

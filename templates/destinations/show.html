@@ -2,8 +2,6 @@
 
 {% block content %}
 
-    {% for destination in destinations %}
-
     <div>
         <p>{{ destination.traveller.name }}</p>
         <hr>
@@ -11,10 +9,10 @@
         <p>{{ destination.country }}</p>
         <p>{{ destination.duration }}</p>
         <p>{{ destination.checked_off }}</p>
-        <p><a href="/bucket-list/{{destination.id}}/edit">Edit</a></p>
+        <p><a href="/destinations/{{destination.id}}/edit">Edit</a></p>
     </div>
         
-    {% endfor %}
+
  
     
 {% endblock  %}

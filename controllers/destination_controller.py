@@ -1,3 +1,4 @@
+from crypt import methods
 from types import CoroutineType
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
@@ -9,31 +10,25 @@ destinations_blueprint = Blueprint("destinations", __name__)
 
 # INDEX 
 
-@destinations_blueprint.route("/Voyager")
-def home():
-    return render_template("/index.html")
-
-
-@destinations_blueprint.route("/destinations")
-def destinations():
+@destinations_blueprint.route("/destinations/new")
+def destination_new():
     #GET the destinations from the DB
     destinations = destination_repository.select_all()
     travellers = traveller_repository.select_all()
     # Pass the destinations to the template 
     return render_template("destinations/new.html", all_destinations=destinations, all_travellers=travellers) 
 
-# NEW
-# GET '/tasks/new'
 
-@destinations_blueprint.route("/destinations/new", methods=['GET'])
-def new_destination():
-    travellers = traveller_repository.select_all()
-    return render_template("destinations/new.html", all_travellers=travellers)
+@destinations_blueprint.route("/Voyager")
+def home():
+    return render_template("index.html")
+
+# NEW
+# GET 
 
 # CREATE
-# POST '/tasks'
 
-@destinations_blueprint.route("/bucket-list", methods=['POST'])
+@destinations_blueprint.route("/destinations", methods=['POST'])
 def create_destination():
     traveller_id    = request.form['traveller_id']
     city            = request.form['city']
@@ -43,14 +38,67 @@ def create_destination():
     traveller       = traveller_repository.select(traveller_id)
     destination     = Destination (traveller, city, country, duration, checked_off)
     destination_repository.save(destination)
-    return redirect('/bucket-list')
+    return redirect('/destinations')
+
+
+
+
+@destinations_blueprint.route("/bucket-list", methods=['GET'])
+def show_bucket_list():
+    destinations = destination_repository.select_all()
+    travellers = traveller_repository.select_all()
+    return render_template('destinations/index.html', all_destinations = destinations, all_travellers = travellers)
+
 
 # SHOW
-# GET '/tasks/<id>'
+
 @destinations_blueprint.route("/destinations/<id>", methods=['GET'])
 def show_destination(id):
-    destinations = destination_repository.select(id)
-    return render_template('destination/bucket-list.html', destinations = destinations) 
+    destination = destination_repository.select(id)
+    traveller= traveller_repository.select(id)
+    return render_template('destinations/show.html', destination = destination, traveller = traveller) 
+
+
+
+@destinations_blueprint.route("/destinations/<id>/edit", methods=['GET'])
+def edit_destination(id):
+    destination = destination_repository.select(id)
+    travellers = traveller_repository.select_all()
+    return render_template('destinations/edit.html', destination = destination, all_travellers = travellers)
+
+@destinations_blueprint.route("/destinations/<id>", methods=["Post"])
+def update_destination(id):
+    traveller_id    = request.form['traveller_id']
+    city            = request.form['city']
+    country         = request.form['country']
+    duration        = request.form['duration']
+    checked_off     = request.form['done']
+    traveller       = traveller_repository.select(traveller_id)
+    destination     = Destination (traveller, city, country, duration, checked_off)
+    destination_repository.save(destination)
+    return redirect('/destinations')
+
+
+
+# # UPDATE
+# # PUT '/tasks/<id>'
+# @tasks_blueprint.route("/tasks/<id>", methods=['POST'])
+# def update_task(id):
+#     description = request.form['description']
+#     user_id     = request.form['user_id']
+#     duration    = request.form['duration']
+#     completed   = request.form['completed']
+#     user        = user_repository.select(user_id)
+#     task        = Task(description, user, duration, completed, id)
+#     task_repository.update(task)
+#     return redirect('/tasks')
+
+# # DELETE
+# # DELETE '/tasks/<id>'
+# @tasks_blueprint.route("/tasks/<id>/delete", methods=['POST'])
+# def delete_task(id):
+#     task_repository.delete(id)
+#     return redirect('/tasks')
 
 
 

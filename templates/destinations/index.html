@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Traveller Name:</th>
+            <th>Traveller Name:</th>
+            <th>Traveller Name:</th>
+            <th>Traveller Name:</th>
+            <th>Traveller Name:</th>
+            <th>Traveller Name:</th>
+        </tr>
+    {% for destination in all_destinations %}
+        <tr>
+        <td>{{ destination.traveller.name }}</td>
+        <td><a href="/destinations/{{destination.id}}">{{ destination.city}}</a></td>
+        <td>{{ destination.country }}</td>
+        <td>{{ destination.duration }}</td>
+        <td>{{ destination.checked_off }}</td>
+        <td><a href="/destinations/{{destination.id}}/edit">Edit</a></td>
+        </tr>
+    </div>
+    
+    {% endfor %}
+    </table>        
+    
+{% endblock  %}

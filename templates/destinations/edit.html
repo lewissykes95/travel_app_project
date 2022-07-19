@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/tasks/{{destination.id}}" method="post">
+    <div>
+        <label for="traveller">Traveller:</label>
+        <select id="traveller" name="traveller_id">
+          {% for traveller in all_travellers %}
+            <option value="{{ traveller.id }}"
+              {% if destination.traveller.id== traveller.id %} selected="selected"{% endif %}>
+              {{ traveller.name }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" value="{{destination.city}}" required autofocus>
+    </div>
+  
+    <div>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" value="{{destination.country}}" required>
+    </div>
+
+      
+    <div>
+        <label for="duration">Duration:</label>
+        <input type="number" id="duration" name="duration" value="{{destination.duration}}" required>
+      </div>
+    
+  
+    <div>
+      <label for="checked-off">Checked Off:</label>
+      <select id="checked_off" name="checked_off">
+  
+        <option value="true"
+          {% if destination.checked_off == True %} selected="selected" {% endif %}>
+          True
+        </option>
+  
+        <option value="false"
+          {% if destination.checked_off == False %} selected="selected" {% endif %}>
+          False
+        </option>
+  
+      </select>
+    </div>
+    <button type="submit">Update Destination</button>
+  
+  </form>
+    
+{% endblock %}
+

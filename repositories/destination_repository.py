@@ -22,7 +22,7 @@ def select_all():
         traveller = traveller_repository.select(row['traveller_id'])
         destination = Destination(traveller, row['city'], row['country'], row['duration'], row['checked_off'], row['id'])
         destinations.append(destination)
-    return destination
+    return destinations
 
 def select(id):
     destination = None

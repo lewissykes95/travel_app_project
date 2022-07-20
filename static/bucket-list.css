@@ -21,19 +21,35 @@ main {
     
 }
 
-.flex-item2 {
-    flex: auto;
-    width: 66.7%;
-}
 
-#milford {
-    width: 100%;
-    height: 100%;
+.flex-item2 {
+    width: 1000px;
+    flex: auto;
     border-radius: 15px;
     border: 2px solid rgb(2, 97, 92);
+    overflow: hidden;  
+}
+
+.flex-item2 img {
+    transition: transform .3s;   /* smoother zoom */
     
 }
 
+.flex-item2:hover img {
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
+    
+}
+
+#milford {
+    position: relative;
+    right: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    
+    
+}
 
 .centered {
     position: absolute;
@@ -44,7 +60,8 @@ main {
     color: white;
     background-blend-mode: normal;
   }
- 
+
+
 
 
  

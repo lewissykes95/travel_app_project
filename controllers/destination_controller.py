@@ -93,7 +93,6 @@ def delete_destination(id):
     return redirect('/bucket-list')
 
 
-
 @destinations_blueprint.route("/destinations/amsterdam")
 def amsterdam():
     return render_template("destinations/amsterdam.html")

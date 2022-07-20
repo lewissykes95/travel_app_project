@@ -54,10 +54,8 @@
     font-size: 50px;
     top: 40%;
     left: 0%;
-    color: white;
 }
 
- 
 
 #card2 {
     height: 95%;
@@ -81,7 +79,7 @@ footer {
 
 
 footer {
-    background-image: linear-gradient(to right, rgb(7, 153, 146, 0.596) , white);
+    background-image: linear-gradient(to bottom, rgb(7, 153, 146, 0.596) , white);
     
 }
 
@@ -99,5 +97,6 @@ footer {
     color: rgb(2, 97, 92);
     
 }
+
 
 

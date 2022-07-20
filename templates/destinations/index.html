@@ -10,9 +10,12 @@
             <h3>Country: {{ destination.country }}</h3>
             <h3>Duration in days: {{ destination.duration }}</h3>
             <h3>Checked Off: {{ destination.checked_off }}</h3>
+            <form class="delete-form" action="/destinations/{{destination.id}}/delete" method="POST">
+                <button class="submit-button-delete">Delete</button>
+              </form> 
         </div> 
     {% endfor %}
-          
+    
     </section>  
     <br>
     <br>

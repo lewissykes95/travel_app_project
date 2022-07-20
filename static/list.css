@@ -1,9 +1,9 @@
 .destination-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     margin-top: 20px;
-    margin: 10px;
+    margin-bottom: 10px;
     
 
 }
@@ -16,6 +16,7 @@
     border: 2px solid rgb(2, 97, 92);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(2, 97, 92);
+    margin: 20px;
     
 }
 
@@ -57,4 +58,5 @@
 .edit {
     color: black;
 }
+
 

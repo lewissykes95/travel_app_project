@@ -1,20 +1,19 @@
-DROP TABLE destinations;
+DROP TABLE bucket-list
+DROP TABLE destination
+DROP TABLE country
 DROP TABLE travellers; 
 
 CREATE TABLE travellers (
     id SERIAL PRIMARY KEY, 
     name VARCHAR(255),
-    age INTEGER
 );
 
-CREATE TABLE destinations (
-    id SERIAL PRIMARY KEY, 
-    city VARCHAR(255),
-    country VARCHAR(255),
-    duration VARCHAR(255),
-    checked_off BOOLEAN, 
-    traveller_id INT NOT NULL REFERENCES travellers(id)
+
+CREATE TABLE country (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
+
 
 CREATE TABLE destinations (
     id SERIAL PRIMARY KEY, 
@@ -28,7 +27,6 @@ CREATE TABLE bucket-list (
     destination_id SERIAL NOT NULL REFERENCES destination(id),
     visited BOOLEAN
 );
-
 
 
     

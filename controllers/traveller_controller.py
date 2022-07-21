@@ -15,5 +15,15 @@ def about():
     return render_template("about.html")
 
 
+@travellers_blueprint.route("/login", methods=['POST'])
+def create_destination():
+    name            = request.form['name']
+    age             = request.form['age']
+    traveller       = Traveller (name, age)
+    traveller       = traveller_repository.save(traveller)
+    return redirect('/login')
+
+
+
 
 

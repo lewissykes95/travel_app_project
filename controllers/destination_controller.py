@@ -86,7 +86,6 @@ def update_destination(id):
 
 # DELETE
 
-
 @destinations_blueprint.route("/destinations/<id>/delete", methods=['POST'])
 def delete_destination(id):
     destination_repository.delete(id)
@@ -107,6 +106,14 @@ def sydney():
 @destinations_blueprint.route("/destinations/rio")
 def rio():
     return render_template("destinations/rio.html")
+
+
+@destinations_blueprint.route("/destinations/going/<id>", methods=['GET'])
+def show_destination_going(id):
+    destination = destination_repository.select(id)
+    traveller = traveller_repository.select(id)
+    return render_template('destinations/going.html', destination = destination, traveller = traveller) 
+
 
 
 

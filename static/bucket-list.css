@@ -21,7 +21,6 @@ main {
     
 }
 
-
 .flex-item2 {
     width: 1000px;
     flex: auto;
@@ -31,14 +30,12 @@ main {
 }
 
 .flex-item2 img {
-    transition: transform .3s;   /* smoother zoom */
-    
+    transition: transform .3s;   /* smoother zoom */ 
 }
 
 .flex-item2:hover img {
     transform: scale(1.1);
-    transform-origin: 50% 50%;
-    
+    transform-origin: 50% 50%;   
 }
 
 #milford {
@@ -46,9 +43,7 @@ main {
     right: 20px;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    
-    
+    border-radius: 15px;  
 }
 
 .centered {
@@ -62,17 +57,12 @@ main {
   }
 
 
-
-
- 
 #amsterdam {
     margin: 20px;
     width: 800px;
     height: 555px;
     border-radius: 15px;
-    border: 2px solid rgb(2, 97, 92);
-    
-    
+    border: 2px solid rgb(2, 97, 92); 
 }
 
 
@@ -81,8 +71,7 @@ main {
     width: 800px;
     height: 555px;
     border-radius: 15px;
-    border: 2px solid rgb(2, 97, 92);
-    
+    border: 2px solid rgb(2, 97, 92);   
 }
 
 #rio {
@@ -90,9 +79,7 @@ main {
     width: 800px;
     height: 555px;
     border-radius: 15px;
-    border: 2px solid rgb(2, 97, 92);
-    
-    
+    border: 2px solid rgb(2, 97, 92);   
 }
 
 .country-title {
@@ -107,7 +94,6 @@ main {
     height: 410px;
     border-radius: 15px;
     border: 2px solid rgb(2, 97, 92);
-
 }
 
 

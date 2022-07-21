@@ -5,37 +5,25 @@
 
 {% block content %}
 <section>
-    <br>
-    <div class="login">
-        <br>
-        <label for="">Username:</label>
-        <input type="text">
         <br>
         <br>
-        <label for="">Password: </label>
-        <input type="password">
-        <br>
-        <br>
-        <button value="submit" class="submit-button">Login</button>
-        <br>
-        <br>
-        <label for="" id="sign-up">Sign up with email:</label>
-        <input type="text" placeholder="Email:" class="option">
-    </div>
+        <form action="/login" method="post" class="login">
+            <br>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="option">
+            </div>
+            <br>
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" class="option">
+            </div>
+            <br>
+            <button type="submit" class="submit-button">Add Guest</button>
+        </form>
+    
+
 </section>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
     
 
 {% endblock %}

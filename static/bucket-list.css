@@ -101,3 +101,11 @@ main {
     margin-left: 20px;
     text-align: justify;
 }
+
+
+.giphy-embed {
+    position: relative;
+    left: 33%;
+    border-radius: 20px; 
+    box-shadow: 10px 10px 10px rgb(2, 97, 92);
+}

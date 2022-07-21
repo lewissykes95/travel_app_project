@@ -27,7 +27,7 @@ def create_guest():
 
 #DELETE
 
-# @travellers_blueprint.route("/travellers/<id>/delete", methods=['POST'])
+# @travellers_blueprint.route("/destinations/<id>/delete", methods=['POST'])
 # def delete_traveller(id):
 #     traveller_repository.delete(id)
 #     return redirect ('/destinations/new')

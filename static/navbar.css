@@ -57,7 +57,6 @@ a:hover {
     cursor: pointer;
 }
 
-
 .option {
     padding: 6px;
     font-family: 'Lobster Two', cursive;
@@ -68,7 +67,6 @@ a:hover {
     background-color: white;  
 }
 
-
 .submit-button-delete {
     padding: 8px;
     font-family: 'Lobster Two', cursive;
@@ -78,7 +76,6 @@ a:hover {
     color: rgb(2, 97, 92);
     background-color: white;
 }
-
 
 .submit-button-delete:hover {
     color: white;

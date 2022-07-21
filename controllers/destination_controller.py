@@ -3,6 +3,7 @@ from types import CoroutineType
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.destination import Destination
+from models.traveller import Traveller
 import repositories.traveller_repository as traveller_repository
 import repositories.destination_repository as destination_repository
 
@@ -15,7 +16,7 @@ def destination_new():
     #GET the destinations from the DB
     destinations = destination_repository.select_all()
     travellers = traveller_repository.select_all()
-    # Pass the destinations to the template 
+     
     return render_template("destinations/new.html", all_destinations=destinations, all_travellers=travellers) 
 
 
@@ -91,28 +92,24 @@ def delete_destination(id):
     destination_repository.delete(id)
     return redirect('/bucket-list')
 
-
 @destinations_blueprint.route("/destinations/amsterdam")
 def amsterdam():
     return render_template("destinations/amsterdam.html")
-
-
 
 @destinations_blueprint.route("/destinations/sydney")
 def sydney():
     return render_template("destinations/sydney.html")
 
-
 @destinations_blueprint.route("/destinations/rio")
 def rio():
     return render_template("destinations/rio.html")
-
 
 @destinations_blueprint.route("/destinations/going/<id>", methods=['GET'])
 def show_destination_going(id):
     destination = destination_repository.select(id)
     traveller = traveller_repository.select(id)
     return render_template('destinations/going.html', destination = destination, traveller = traveller) 
+
 
 
 

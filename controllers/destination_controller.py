@@ -67,6 +67,7 @@ def edit_destination(id):
 
 #UPDATE
 
+
 @destinations_blueprint.route("/destinations/<id>", methods=["Post"])
 def update_destination(id):
     traveller_id    = request.form['traveller_id']

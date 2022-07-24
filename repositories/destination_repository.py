@@ -11,6 +11,13 @@ def save(destination):
     return destination
 
 
+#PSEUDOCODE - SELECT ALL DESTINATIONS 
+# SET destinations to empty list
+# SELECT ALL FROM destinations (SQL)
+# FOR each row in destinations table results 
+# APPEND each destination to the empty list
+# RETURN list of destinations
+# END 
 
 def select_all():
     destinations = []

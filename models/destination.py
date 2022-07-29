@@ -11,4 +11,16 @@ class Destination:
     def mark_checked_off(self):
         self.checked_off = True
 
+    def checked_off_country(self): 
+        if self.traveller == "Lewis" and self.country == "Australia":
+            self.checked_off = True
+        else: 
+            self.checked_off = False 
+
+    
+
+
+
+    
+
     

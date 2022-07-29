@@ -12,12 +12,15 @@ def save(destination):
 
 
 #PSEUDOCODE - SELECT ALL DESTINATIONS 
+
 # SET destinations to empty list
-# SELECT ALL FROM destinations (SQL)
-# FOR each row in destinations table results 
-# APPEND each destination to the empty list
+# SET SQL = SELECT ALL FROM destinations 
+# SET RESULTS = RUN SQL 
+# FOR each row in destinations RESULTS 
+#   APPEND each destination to the empty list
 # RETURN list of destinations
 # END 
+
 
 def select_all():
     destinations = []
@@ -37,7 +40,7 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)
 
-    if results is not None:
+    if results:
         result = results[0]
         traveller = traveller_repository.select(result['traveller_id'])
         destination = Destination(traveller, result['city'], result['country'], result['duration'], result['checked_off'], result['id'])
